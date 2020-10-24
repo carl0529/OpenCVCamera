@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--        android:layout_height="300dp"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/BitmapView"-->
+
+    <org.opencv.android.JavaCameraView
+        android:id="@+id/CameraView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <org.opencv.android.JavaCameraView
+        android:id="@+id/BitmapView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="invisible"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CameraView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BitmapView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="Canny"
+        android:text="Canny"
+        app:layout_constraintBottom_toBottomOf="@+id/CameraView"
+        app:layout_constraintEnd_toStartOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:onClick="Yolo"
+        android:text="Yolo"
+        app:layout_constraintBottom_toBottomOf="@+id/CameraView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="Model"
+        android:text="Model"
+        app:layout_constraintBottom_toBottomOf="@+id/CameraView"
+        app:layout_constraintStart_toEndOf="@+id/button2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="245dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="127dp"
+        app:layout_constraintBottom_toBottomOf="@+id/CameraView"
+        app:layout_constraintEnd_toEndOf="@+id/CameraView"
+        app:layout_constraintStart_toStartOf="@+id/CameraView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
